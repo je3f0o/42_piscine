@@ -3,7 +3,7 @@
 Shell:
 ```bash
 gcc -Wall main.c ft_strcmp.c -o strcmp
-norminette ft_str*.c
+norminette ft_strcmp.c
 ft_strcmp.c: OK!
 
 # Executing
