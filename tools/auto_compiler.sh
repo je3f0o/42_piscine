@@ -10,18 +10,21 @@ pdf_name=`dirname "$_pwd"`
 pdf_name=`basename "$pdf_name"`
 exercise_name=`basename "$_pwd"`
 
-compile_command="gcc -Wall main.c ft_${exec_name}.c -o $exec_name";
+gcc_command="gcc -Wall main.c ft_${exec_name}.c -o $exec_name";
 norm_command="norminette ft_${exec_name}.c";
 
-echo "$compile_command"
-gcc_output=$($compile_command)
+echo "$gcc_command"
+gcc_output=$($gcc_command)
+gcc_return=$?
 echo -n "$gcc_output"
+[ $gcc_return != 0 ] && exit $gcc_return
 
 echo "$norm_command"
 norm_output=$($norm_command)
-echo $norm_output
+norm_return=$?
+echo "$norm_output"
 
-if [[ $? == 0 ]]; then
+if [ $norm_return -eq 0 ]; then
 	output=$(./$exec_name);
 
 	echo ""
