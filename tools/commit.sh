@@ -14,4 +14,5 @@ len=${#exercise_name}
 exercise_number=${exercise_name:(len-1)}
 echo "${exercise_number}"
 
+git add "../$exercise_name"
 git commit -m "$pdf_name -> 0${exercise_number} ft_${exec_name}.c NORMINETTED"
