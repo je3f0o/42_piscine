@@ -10,7 +10,7 @@ pdf_name=`dirname "$_pwd"`
 pdf_name=`basename "$pdf_name"`
 exercise_name=`basename "$_pwd"`
 
-gcc_command="gcc -Wall main.c ft_${exec_name}.c -o $exec_name";
+gcc_command="gcc -Wall -Wextra -Werror main.c ft_${exec_name}.c -o $exec_name";
 norm_command="norminette ft_${exec_name}.c";
 
 echo "$gcc_command"
@@ -42,9 +42,9 @@ if [ $norm_return -eq 0 ]; then
 	echo "" >> README.md
 	echo "Shell:" >> README.md
 	echo '```bash' >> README.md
-	echo "gcc -Wall main.c ft_${exec_name}.c -o $exec_name" >> README.md
+	echo "$gcc_command" >> README.md
 	echo -n "$gcc_output" >> README.md
-	echo "norminette ft_${exec_name}.c" >> README.md
+	echo "$norm_command" >> README.md
 	echo "$norm_output" >> README.md
 
 	echo "" >> README.md
