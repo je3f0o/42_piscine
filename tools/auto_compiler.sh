@@ -37,7 +37,7 @@ if [ $norm_return -eq 0 ]; then
 	echo "$exec_name" > .gitignore
 
 	echo "Generating 'README.md' file..."
-	echo "# ${pdf_name} ${exercise_name} ft_${exec_name}.c" > README.md
+	echo "# ${pdf_name} ${exercise_name} ft_${exec_name}.c (NORMINETTED)" > README.md
 
 	echo "" >> README.md
 	echo "Shell:" >> README.md

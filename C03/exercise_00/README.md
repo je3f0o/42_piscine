@@ -1,4 +1,4 @@
-# C03 exercise_00 ft_strcmp.c
+# C03 exercise_00 ft_strcmp.c (NORMINETTED)
 
 Shell:
 ```bash
