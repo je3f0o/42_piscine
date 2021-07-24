@@ -1,24 +1,29 @@
 #include <unistd.h>
 
-int ft_strlen(char *str) {
-	int index = 0;
+int	ft_strlen(char *str)
+{
+	int	i;
 
-	while (str[index] != 0) {
-		index += 1;
+	i = 0;
+	while (str[i] != 0)
+	{
+		i += 1;
 	}
-
-	return index;
+	return (i);
 }
 
-int main(int argc, char **argv) {
-	int i	= argc - 1;
-	char nl = '\n';
+int	main(int argc, char **argv)
+{
+	int		i;
+	char	nl;
 
-	while (i > 0) {
+	i = argc - 1;
+	nl = '\n';
+	while (i > 0)
+	{
 		write(1, argv[i], ft_strlen(argv[i]));
 		write(1, &nl, 1);
 		i -= 1;
 	}
-
-	return 0;
+	return (0);
 }
