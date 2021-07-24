@@ -2,14 +2,14 @@
 
 int	ft_strlen(char *str)
 {
-	int	index;
+	int	i;
 
-	index = 0;
-	while (str[index] != 0)
+	i = 0;
+	while (str[i] != 0)
 	{
-		index += 1;
+		i += 1;
 	}
-	return (index);
+	return (i);
 }
 
 int	ft_strcmp(char *s1, char *s2)
