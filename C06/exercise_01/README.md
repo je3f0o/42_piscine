@@ -7,6 +7,8 @@ norminette -R CheckForbiddenSourceHeader ft_print_params.c
 ft_print_params.c: OK!
 
 # Executing
-./print_params
-
+./print_params a b c
+a
+b
+c
 ```
