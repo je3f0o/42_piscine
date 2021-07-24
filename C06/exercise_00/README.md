@@ -1,4 +1,4 @@
-# C05 exercise_00 ft_iterative_factorial.c (NORMINETTED)
+# C06 exercise_00 ft_print_program_name.c (NORMINETTED)
 
 Shell:
 ```bash
