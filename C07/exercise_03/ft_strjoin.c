@@ -1,54 +1,77 @@
-#include <string.h>
 #include <stdlib.h>
-#include "ft_strjoin.h"
+#include <stdio.h>
 
-int calculate_buffer_size(int size, char **strs, char *sep) {
-	int i                = 0;
-	int strings_size     = 0;
-	int seperator_length = strlen(sep);
-	int seperator_size   = (size - 1) * seperator_length;
+int	ft_strlen(char *str)
+{
+	int	i;
 
-	if (size == 0) {
-		return 0;
-	}
-
-	while (i < size) {
-		strings_size += strlen(strs[i]);
+	i = 0;
+	while (str[i] != 0)
+	{
 		i += 1;
 	}
-
-	return strings_size + seperator_size + 1;
+	return (i);
 }
 
-char *ft_strjoin(int size, char **strs, char *sep) {
-	int i                = 1;
-	int string_length    = 0;
-	int offset_index     = 0;
-	char *buffer         = 0;
-	char *offset_pointer = 0;
+int	calculate_buffer_size(int size, char **strs, char *sep)
+{
+	int	i;
+	int	strings_size;
+	int	seperator_length;
+	int	seperator_size;
 
+	i = 0;
+	strings_size = 0;
+	seperator_length = ft_strlen(sep);
+	seperator_size = (size - 1) * seperator_length;
+	if (size == 0)
+	{
+		return (0);
+	}
+	while (i < size)
+	{
+		strings_size += ft_strlen(strs[i]);
+		i += 1;
+	}
+	return (strings_size + seperator_size + 1);
+}
+
+unsigned int	append(char *dest, int offset, char *src)
+{
+	unsigned int	len;
+	unsigned int	i;
+	unsigned int	j;
+
+	j = 0;
+	i = offset;
+	len = ft_strlen(src);
+	while (j < len)
+	{
+		dest[i] = src[j];
+		i += 1;
+		j += 1;
+	}
+	return (len);
+}
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	int		i;
+	int		offset_index;
+	char	*buffer;
+
+	offset_index = 0;
 	buffer = (char *)malloc(calculate_buffer_size(size, strs, sep));
-
-	if (buffer != NULL && size > 0) {
-		string_length = strlen(strs[0]);
-		memcpy(buffer, strs[0], string_length);
-
-		offset_index = string_length;
-		while (i < size) {
-			offset_pointer = &(buffer[offset_index]);
-
-			string_length = strlen(sep);
-			memcpy(offset_pointer, sep, string_length);
-			offset_index += string_length;
-
-			offset_pointer = &(buffer[offset_index]);
-			string_length = strlen(strs[i]);
-			memcpy(offset_pointer, strs[i], string_length);
-			offset_index += string_length;
-
+	if (buffer != 0 && size > 0)
+	{
+		offset_index += append(buffer, 0, strs[0]);
+		i = 1;
+		while (i < size)
+		{
+			offset_index += append(buffer, offset_index, sep);
+			offset_index += append(buffer, offset_index, strs[i]);
 			i += 1;
 		}
 	}
-
-	return buffer;
+	return (buffer);
 }

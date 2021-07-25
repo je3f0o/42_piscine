@@ -1,7 +1,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "ft_strjoin.h"
+
+char *ft_strjoin(int size, char **strs, char *sep);
 
 int main () {
     char word1[] = "hello";
@@ -14,6 +15,9 @@ int main () {
 
     char sep[] = "-+-+-";
     char *result = ft_strjoin(length, strings, sep);
+
+	puts("----------------------------");
+	printf("sep = '%s'\n", sep);
 
     if (result != NULL) {
         for (int i = 0; i < length; i += 1) {
