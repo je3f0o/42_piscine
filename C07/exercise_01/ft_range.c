@@ -4,18 +4,16 @@ int	*ft_range(int min, int max)
 {
 	int		i;
 	int		size;
-	int		delta;
+	int		len;
 	int		*array;
-	void	*pointer;
 
-	delta = max - min;
-	size = delta * sizeof(int);
-	pointer = malloc(size);
-	if (pointer != 0)
+	len = max - min;
+	size = len * sizeof(int);
+	array = (int *)malloc(size);
+	if (array != 0)
 	{
 		i = 0;
-		array = (int *)pointer;
-		while (i < delta)
+		while (i < len)
 		{
 			array[i] = min + i;
 			i += 1;
