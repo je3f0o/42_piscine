@@ -10,7 +10,7 @@ pdf_name=`dirname "$_pwd"`
 pdf_name=`basename "$pdf_name"`
 exercise_name=`basename "$_pwd"`
 
-gcc_command="gcc -Wall -Wextra -Werror ft_${exec_name}.c -o $exec_name";
+gcc_command="gcc -Wall -Wextra -Werror *.c -o $exec_name";
 norm_command="norminette -R CheckForbiddenSourceHeader ft_${exec_name}.c";
 
 echo "$gcc_command"
