@@ -16,7 +16,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Set tab
+" Use tab no spaces
 set noexpandtab
 
 " Invisible character symbol
@@ -24,3 +24,10 @@ set listchars=tab:▸\ ,eol:⏎
 
 " Show invisible characters
 set list
+
+" I use more more modern way to loss data, I use GIT
+set nobackup
+set noswapfile
+
+" Disable Ex mode
+nnoremap Q <Nop>
