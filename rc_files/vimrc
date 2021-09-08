@@ -1,0 +1,26 @@
+syntax on
+syntax enable
+
+" Showing line numbers
+set number
+
+" No new line end of file
+set noendofline
+set nofixendofline
+
+" Tab configs
+set autoindent
+set smarttab
+set smartindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Set tab
+set noexpandtab
+
+" Invisible character symbol
+set listchars=tab:▸\ ,eol:⏎
+
+" Show invisible characters
+set list
